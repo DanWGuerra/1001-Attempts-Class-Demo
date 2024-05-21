@@ -38,7 +38,7 @@ public class Personaje : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Sierra"))
+        if (collision.gameObject.CompareTag("Sierra") || collision.gameObject.CompareTag("Enemigo"))
         {
             gameManager.GameOver();
             Destroy(gameObject);
