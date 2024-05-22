@@ -35,6 +35,11 @@ public class Personaje : MonoBehaviour
         }
     }
 
+    private void OnParticleCollision(GameObject other)
+    {
+        gameManager.GameOver();
+        Destroy(gameObject);
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
