@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5466341415931934895}
   - component: {fileID: 8269126944085725597}
   - component: {fileID: 8171352857057530146}
+  - component: {fileID: -8373316226323335479}
   m_Layer: 6
   m_Name: Sierra
   m_TagString: Sierra
@@ -123,3 +124,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 2
+--- !u!114 &-8373316226323335479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6901183484570273772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb8b897c499d6bf49811018a32658aad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
