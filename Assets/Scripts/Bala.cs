@@ -10,13 +10,13 @@ public class Bala : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        //player = GameObject.FindGameObjectWithTag("Player").transform;
         rb = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
-        //if (player != null) 
+        //if (player != null)
         //{
         //    Vector2 direccion = (Vector2)player.position - (Vector2)transform.position;
         //    direccion.Normalize();

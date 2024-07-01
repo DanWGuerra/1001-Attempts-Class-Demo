@@ -33,12 +33,16 @@ public class Torreta : MonoBehaviour
 
     IEnumerator Disparar()
     {
-        yield return new WaitForSeconds(CadenciaDisparo);
-        GameObject BalaIns = Instantiate(PrefabBala);
-        BalaIns.transform.position = PosDisparo.position;
-        Rigidbody2D rbBala = BalaIns.GetComponent<Rigidbody2D>();
-        rbBala.AddForce(PosDisparo.right * velocidadBala, ForceMode2D.Impulse);
-        Destroy(BalaIns, 6f);
-        StartCoroutine(Disparar());
+        if(Jugador != null)
+        {
+            yield return new WaitForSeconds(CadenciaDisparo);
+            GameObject BalaIns = Instantiate(PrefabBala);
+            BalaIns.transform.position = PosDisparo.position;
+            Rigidbody2D rbBala = BalaIns.GetComponent<Rigidbody2D>();
+            rbBala.AddForce(PosDisparo.right * velocidadBala, ForceMode2D.Impulse);
+            Destroy(BalaIns, 6f);
+            StartCoroutine(Disparar());
+        }
+       
     }
 }

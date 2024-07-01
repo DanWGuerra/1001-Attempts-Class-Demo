@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public Transform PosIzq, PosDer, PosTorreta;
-    public GameObject Sierra, Tesla, Torreta;
+    public Transform PosIzq, PosDer, PosMosca;
+    public GameObject Sierra, Tesla, Mosca;
     public float SpeedSierra;
 
     // Start is called before the first frame update
@@ -20,7 +20,7 @@ public class EnemySpawner : MonoBehaviour
         {
             float seconds = Random.Range(3, 6);
             yield return new WaitForSeconds(seconds);
-            int enemigo = Random.Range(1, 3);
+            int enemigo = Random.Range(1, 4);
             switch (enemigo)
             {
                 //Sierra
@@ -52,11 +52,11 @@ public class EnemySpawner : MonoBehaviour
                     Destroy(TeslaIns, 3.5f);
                     break;
         
-                //Wea
+                //Mosca
                 case 3:
-                    GameObject TorretaIns = Instantiate(Torreta);
-                    TorretaIns.transform.position = PosTorreta.position;
-                    Destroy(TorretaIns, 5f);
+                    GameObject MoscaIns = Instantiate(Mosca);
+                    MoscaIns.transform.position = PosMosca.position;
+                    Destroy(MoscaIns, 5f);
                     break;
 
                 default:
