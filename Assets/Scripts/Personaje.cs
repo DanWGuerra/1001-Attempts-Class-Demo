@@ -9,10 +9,12 @@ public class Personaje : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundMask;
     public GameManager gameManager;
+    SpriteRenderer spriteRenderer;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -25,7 +27,16 @@ public class Personaje : MonoBehaviour
     void Movimiento()
     {
         float MoveX = Input.GetAxis("Horizontal");
-       
+        
+        if(MoveX < 0)
+        {
+            spriteRenderer.flipX = false;
+        }
+        else if(MoveX > 0) 
+        {
+            spriteRenderer.flipX = true;
+        }
+
         rb.velocity = new Vector2 (MoveX * speed, rb.velocity.y);
 
         bool InGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundMask);

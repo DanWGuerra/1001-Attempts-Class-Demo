@@ -8,6 +8,8 @@ public class Torreta : MonoBehaviour
     public Transform PosDisparo;
     public float CadenciaDisparo, velocidadBala;
 
+    public AudioSource SonidoDisparo;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +39,7 @@ public class Torreta : MonoBehaviour
         {
             yield return new WaitForSeconds(CadenciaDisparo);
             GameObject BalaIns = Instantiate(PrefabBala);
+            SonidoDisparo.Play();
             BalaIns.transform.position = PosDisparo.position;
             Rigidbody2D rbBala = BalaIns.GetComponent<Rigidbody2D>();
             rbBala.AddForce(PosDisparo.right * velocidadBala, ForceMode2D.Impulse);

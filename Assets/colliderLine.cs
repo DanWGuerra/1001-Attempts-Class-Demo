@@ -16,15 +16,8 @@ public class colliderLine : MonoBehaviour
      
     }
 
-
-
-
     void createColliders()
     {
-        //Mesh mesh = new Mesh();
-        //lineRenderer.BakeMesh(mesh, true);
-        //MeshCollider meshCollider = gameObject.AddComponent<MeshCollider>();
-        //meshCollider.sharedMesh = mesh;
         EdgeCollider2D Collider2D = gameObject.AddComponent<EdgeCollider2D>();
         Vector3[] posiciones = new Vector3[lineRenderer.positionCount];
         lineRenderer.GetPositions(posiciones);
@@ -36,11 +29,7 @@ public class colliderLine : MonoBehaviour
             puntos.Add(pos);
         }
         
-
         Collider2D.SetPoints(puntos);
         Collider2D.edgeRadius = colliderWidth;
-       
-
-
     }
 }
